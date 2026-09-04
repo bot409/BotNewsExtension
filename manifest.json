@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "בוט חדשות",
+  "version": "0.9.0",
+  "description": "פתיחה מהירה של פיד חדשות מטלגרם: כתיבת המילים \"בוט חדשות\" בשורת הכתובת בדפדפן תפתח את הפיד",
+  "permissions": [
+    "downloads"
+  ],
+  "host_permissions": [
+    "file:///*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "file:///*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "omnibox": {
+    "keyword": "בוט"
+  },
+  "action": {
+    "default_title": "בוט",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
